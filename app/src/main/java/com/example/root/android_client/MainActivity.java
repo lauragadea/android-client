@@ -1,6 +1,7 @@
 package com.example.root.android_client;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
@@ -41,13 +42,20 @@ public class MainActivity extends Activity {
         //ojo, debe ir a activity_main, y esa me redirige a start_layout
         setContentView(R.layout.start_layout);
 
+       /* ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                R.layout.activity_listview, mobileArray);
 
+        ListView listView = (ListView) findViewById(R.id.mobile_list);
+        listView.setAdapter(adapter);
+
+*/
         new DownloadTask().execute("http://www.google.com/");
     }
 
     public void start(View view){
-
-        setContentView(R.layout.start_layout);
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
+        //setContentView(R.layout.activity_listview);
 
     }
 
