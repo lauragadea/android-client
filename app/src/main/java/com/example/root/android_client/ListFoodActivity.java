@@ -30,6 +30,7 @@ public class ListFoodActivity extends AppCompatActivity implements LoadJSONTask.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_food);
 
@@ -41,7 +42,7 @@ public class ListFoodActivity extends AppCompatActivity implements LoadJSONTask.
     }
 
     public void onLoaded(List<Producto> productoList){
-
+        Log.d("tag", "on loaded");
         for (Producto producto : productoList) {
             HashMap<String, String> map = new HashMap<>();
 
@@ -62,6 +63,7 @@ public class ListFoodActivity extends AppCompatActivity implements LoadJSONTask.
     //not working
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
         CheckedTextView ctv = (CheckedTextView)view;
 
         if(ctv.isChecked()){
@@ -74,7 +76,7 @@ public class ListFoodActivity extends AppCompatActivity implements LoadJSONTask.
         Toast.makeText(this, mProductosMapList.get(i).get(KEY_DESCRIPCION),Toast.LENGTH_LONG).show();
     }
     private void loadListView() {
-
+        Log.d("tag", "on loadlistview");
         ListAdapter adapter = new SimpleAdapter(ListFoodActivity.this, mProductosMapList, R.layout.list_item,
                 new String[] { KEY_DESCRIPCION, KEY_PRECIO },
                 new int[] { R.id.descripcion,R.id.precio });

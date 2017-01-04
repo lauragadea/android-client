@@ -5,33 +5,36 @@
     android:layout_height="match_parent"
 
     >
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/background"
-        android:layout_weight="0.3"
+        android:background="@color/strongPink"
+        android:layout_weight="0.6"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="¡Bienvenida!"
-            android:textColor="@color/white"
-            android:textSize="32dp"
-            android:padding="8dp"
-            android:paddingLeft="13dp"/>
+        <ImageView
+            android:id="@+id/foto_perfil"
+            android:scaleType="centerInside"
 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            android:layout_centerInParent="true"/>
+        
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Laura Gadea"
             android:textColor="@color/white"
-            android:textSize="40sp"
-            android:padding="8dp"
-            android:paddingLeft="13dp"/>
+            android:textSize="18sp"
+            android:paddingTop="16dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/foto_perfil"
+
+            />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <RelativeLayout
@@ -40,24 +43,21 @@
         android:layout_weight="1"
 
         >
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/wine"
-            android:scaleType="centerCrop"/>
+        <ListView
+            android:id="@+id/main_list_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-        <Button
+<!--        <Button
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="start"
             android:text="Listado comidas"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@id/img"
             android:layout_margin="30dp"/>
 
-
+-->
 
     </RelativeLayout>
 
