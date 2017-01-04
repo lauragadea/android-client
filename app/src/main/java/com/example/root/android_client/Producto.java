@@ -5,9 +5,10 @@ package com.example.root.android_client;
  */
 
 public class Producto {
-    private boolean checked;
+    private int id;
     private String descripcion;
     private String precio;
+    private boolean checked;
 
     public String getDescripcion(){
         return descripcion;
@@ -17,6 +18,9 @@ public class Producto {
         return precio;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public boolean isChecked()
     {
