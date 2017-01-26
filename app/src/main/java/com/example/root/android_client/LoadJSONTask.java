@@ -28,7 +28,7 @@ public class LoadJSONTask extends AsyncTask<String, Void, Response> {
     private static final String TAG = MainActivity.class.getSimpleName();
 
         public LoadJSONTask(Listener listener) {
-            Log.d(TAG, "LoadJSONTask");
+
             mListener = listener;
         }
 

@@ -16,6 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView mMainListView;
 
+    String[] values = new String[]{"Comprar comida",
+            "Mi dinero",
+            "Ultimos movimientos",
+            "Salir"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mMainListView = (ListView) findViewById(R.id.main_list_view);
 
-        String[] values = new String[]{"Mi dinero",
-                "Menu de Comidas",
-                "Ultimas compras",
-                "Salir"
-        };
 
         //Defino adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
@@ -46,22 +46,34 @@ public class MainActivity extends AppCompatActivity {
                 //ListView clicked item value
                 String itemValue = (String) mMainListView.getItemAtPosition(position);
 
-                //show alert
-                Toast.makeText(getApplicationContext(), "Posicion: "+itemPosition+" ListItem: "+itemValue, Toast.LENGTH_LONG).show();
+                switch (itemPosition) {
+                    case 0:
+                        Intent intent = new Intent(MainActivity.this, ListFoodActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        //ojo con esta linea ->
+                        MainActivity.super.onResume();
+                        Intent intent2 = new Intent(MainActivity.this, MyAccountActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case 2:
+
+                        Toast.makeText(getApplicationContext(), "Posicion: " + itemPosition + " ListItem: " + itemValue, Toast.LENGTH_LONG).show();
+                        break;
+                    case 3:
+
+                        Toast.makeText(getApplicationContext(), "Posicion: " + itemPosition + " ListItem: " + itemValue, Toast.LENGTH_LONG).show();
+                        break;
+                }
             }
+
+            ;
+
         });
-
     }
 
 
-
-    public void start(View view){
-
-        Intent intent = new Intent(this, ListFoodActivity.class);
-        startActivity(intent);
-
-
-    }
 
 
 

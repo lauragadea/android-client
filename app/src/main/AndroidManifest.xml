@@ -19,7 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConfirmarPedido" />
-        <activity android:name=".ListFoodActivity"></activity>
+        <activity android:name=".ListFoodActivity" />
+        <activity android:name=".MyAccountActivity" />
+        <activity android:name=".CargarSaldo"></activity>
+        <activity android:name=".LoadMoneyTask"></activity>
     </application>
 
 </manifest>
