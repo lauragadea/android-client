@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent2);
                         break;
                     case 2:
-
-                        Toast.makeText(getApplicationContext(), "Posicion: " + itemPosition + " ListItem: " + itemValue, Toast.LENGTH_LONG).show();
+                        Intent intent3 = new Intent(MainActivity.this, MovementActivity.class);
+                        startActivity(intent3);
                         break;
                     case 3:
 

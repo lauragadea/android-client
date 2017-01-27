@@ -21,8 +21,10 @@
         <activity android:name=".ConfirmarPedido" />
         <activity android:name=".ListFoodActivity" />
         <activity android:name=".MyAccountActivity" />
-        <activity android:name=".CargarSaldo"></activity>
-        <activity android:name=".LoadMoneyTask"></activity>
+        <activity android:name=".CargarSaldo" />
+        <activity android:name=".LoadMoneyTask" />
+        <activity android:name=".MovementActivity" />
+        <activity android:name=".LoadMovementJSONTask"></activity>
     </application>
 
 </manifest>
