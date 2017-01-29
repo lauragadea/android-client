@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Tap On It</string>
+    <string name="app_name">Foodprint</string>
     <string name="saldo_data">Saldo: $</string>
     <string name="continuar">Continuar</string>
     <string name="action_settings">Settings</string>

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView mMainListView;
 
-    String[] values = new String[]{"Comprar comida",
+    String[] values = new String[]{"Menu de Comidas",
             "Mi dinero",
             "Ultimos movimientos",
             "Salir"
@@ -62,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent3);
                         break;
                     case 3:
-
-                        Toast.makeText(getApplicationContext(), "Posicion: " + itemPosition + " ListItem: " + itemValue, Toast.LENGTH_LONG).show();
+                        setContentView(R.layout.sign_out);
                         break;
                 }
             }

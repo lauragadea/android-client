@@ -1,25 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_list_food"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.root.android_client.ListFoodActivity">
 
-    <ListView
-        android:id="@+id/list_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    >
 
-    <Button
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_list_food"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Confirmar pedido"
-        android:textColor="@color/white"
-        android:onClick="confirmTransaction"
-        android:padding="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/list_view"
-        />
+        android:layout_height="0dp"
+        android:background="@color/strongPink"
+        android:layout_weight="0.3"
+        android:orientation="vertical"
+        tools:context="com.example.root.android_client.ListFoodActivity">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/comidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:text="Menu de Comidas"
+            android:fontFamily="sans-serif"
+            android:paddingLeft="16dp"
+            android:paddingBottom="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <ListView
+                android:id="@+id/list_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmar pedido"
+                android:textColor="@color/white"
+                android:onClick="confirmTransaction"
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/list_view"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
