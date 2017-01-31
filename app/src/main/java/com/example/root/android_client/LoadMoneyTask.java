@@ -43,7 +43,7 @@ public class LoadMoneyTask extends AsyncTask<Integer, Void, Saldo> {
     private String postMoney(int saldo) throws IOException {
 
         // esta es la url que se tiene en cuenta
-        URL url = new URL("http://192.168.1.131:8000/saldo/" + saldo);
+        URL url = new URL("http://192.168.1.46:8000/saldo/" + saldo);
         Log.d("tag", "URL FINAL -> " + url);
 
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();

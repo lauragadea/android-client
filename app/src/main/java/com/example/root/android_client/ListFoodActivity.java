@@ -20,7 +20,7 @@ public class ListFoodActivity extends AppCompatActivity implements LoadJSONTask.
 
     private ListView mListView;
 
-    public static final String URL = "192.168.1.131:8000/productos";
+    public static final String URL = "192.168.1.46:8000/productos";
 
     private List<HashMap<String, String>> mProductosMapList = new ArrayList<>();
 

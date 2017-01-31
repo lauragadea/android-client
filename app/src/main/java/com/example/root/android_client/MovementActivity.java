@@ -20,9 +20,10 @@ public class MovementActivity  extends AppCompatActivity implements LoadMovement
 
     private ListView mListViewMov;
 
-    public static final String URL = "192.168.1.131:8000/movimientos";
+    public static final String URL = "192.168.1.46:8000/movimientos";
 
-    private List<HashMap<String, String>> mMovimientosMapList = new ArrayList<>();
+    //private List<HashMap<String, String>> mMovimientosMapList = new ArrayList<>();
+    private List<Movimiento> mMovimientosList = new ArrayList<>();
 
     private static final String KEY_DESCRIPCION = "descripcion";
     private static final String KEY_MONTO = "monto";
@@ -45,21 +46,22 @@ public class MovementActivity  extends AppCompatActivity implements LoadMovement
 
 
 
-        Toast.makeText(this, mMovimientosMapList.get(i).get(KEY_DESCRIPCION),Toast.LENGTH_LONG).show();
+       // Toast.makeText(this, mMovimientosList.get(i).get(KEY_DESCRIPCION),Toast.LENGTH_LONG).show();
     }
 
 
     public void onLoaded(List<Movimiento> movimientoList){
         Log.d("tag", "on loaded");
-        for (Movimiento movimiento : movimientoList) {
+        /*for (Movimiento movimiento : movimientoList) {
             HashMap<String, String> map = new HashMap<>();
 
             map.put(KEY_DESCRIPCION, movimiento.getDescripcion());
             map.put(KEY_MONTO, movimiento.getMonto());
             //map.put(KEY_FECHA, movimiento.getFecha());
 
-            mMovimientosMapList.add(map);
-        }
+            mMovimientosList.add(map);
+        }*/
+        mMovimientosList.addAll(movimientoList);
         loadListView();
     }
 
@@ -72,12 +74,20 @@ public class MovementActivity  extends AppCompatActivity implements LoadMovement
 
     private void loadListView() {
         Log.d("tag", "on loadlistview");
-        ListAdapter adapter = new SimpleAdapter(MovementActivity.this, mMovimientosMapList, R.layout.movement_list_item,
+        /*ListAdapter adapter = new SimpleAdapter(MovementActivity.this, mMovimientosList, R.layout.movement_list_item,
                 new String[] { KEY_DESCRIPCION, KEY_MONTO },
                 new int[] { R.id.descripcion,R.id.monto });
 
         mListViewMov.setAdapter(adapter);
+        */
+        MovementAdapter movAdap;
+        ArrayList<Movimiento> myListItems  = new ArrayList<>();
 
+        //then populate myListItems
+
+        movAdap= new MovementAdapter (MovementActivity.this, 0, mMovimientosList);
+
+        mListViewMov.setAdapter(movAdap);
     }
 
 }

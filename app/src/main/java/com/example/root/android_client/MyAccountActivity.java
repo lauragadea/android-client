@@ -16,7 +16,7 @@ import static com.example.root.android_client.R.id.nro_tarjeta;
 
 public class MyAccountActivity extends AppCompatActivity implements LoadAccountJSONTask.Listener {
 
-    public static final String URL = "192.168.1.131:8000/saldo";
+    public static final String URL = "192.168.1.46:8000/saldo";
 
     private TextView mSaldo;
 
@@ -37,6 +37,12 @@ public class MyAccountActivity extends AppCompatActivity implements LoadAccountJ
             @Override
             public void onClick(View v) {
                 EditText numTar = (EditText) findViewById(nro_tarjeta);
+                String validNum;
+
+
+                validNum = numTar.getText().toString();
+                validar(validNum);
+
                 EditText montoAgregado = (EditText) findViewById(R.id.monto);
                 Intent intent = new Intent(MyAccountActivity.this, CargarSaldo.class);
                 intent.putExtra("tarjeta", numTar.getText().toString());
@@ -49,6 +55,15 @@ public class MyAccountActivity extends AppCompatActivity implements LoadAccountJ
         });
 
 
+
+
+    }
+
+    public void validar(String tarjeta){
+        if (tarjeta.matches("")){
+            Toast.makeText(this, "No ha ingresado ningun numero de tarjeta", Toast.LENGTH_SHORT).show();
+
+        }
     }
 
     public void onLoaded(Saldo saldo){

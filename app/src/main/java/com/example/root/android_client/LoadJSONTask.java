@@ -109,7 +109,7 @@ public class LoadJSONTask extends AsyncTask<String, Void, Response> {
         Log.d(TAG, "LoadJSON()");
         //InputStream is = null;
         // esta es la url que se tiene en cuenta
-        URL url = new URL("http://192.168.1.131:8000/productos");
+        URL url = new URL("http://192.168.1.46:8000/productos");
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
 

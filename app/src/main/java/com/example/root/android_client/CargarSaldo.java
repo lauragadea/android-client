@@ -12,7 +12,7 @@ import org.w3c.dom.Text;
 
 public class CargarSaldo extends AppCompatActivity {
 
-    public static final String URL = "192.168.1.131:8000/saldo";
+    public static final String URL = "192.168.1.46:8000/saldo";
     private TextView mSaldoNuevo;
 
     @Override

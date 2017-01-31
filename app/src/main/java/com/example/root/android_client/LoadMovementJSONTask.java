@@ -75,7 +75,7 @@ public class LoadMovementJSONTask extends AsyncTask<String, Void, RespuestaMovim
         Log.d(TAG, "LoadJSON()");
         //InputStream is = null;
         // esta es la url que se tiene en cuenta
-        URL url = new URL("http://192.168.1.131:8000/movimientos");
+        URL url = new URL("http://192.168.1.46:8000/movimientos");
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
 
