@@ -44,7 +44,7 @@ public class LoadJSONTask extends AsyncTask<String, Void, Response> {
         @Override
         protected Response doInBackground(String... strings) {
             //do your request in here so that you don't interrupt the UI thread
-            Log.d(TAG, "a ver stringRespnonse?");
+            Log.d(TAG, "stringRespnonse?");
             try {
                 String stringResponse = loadJSON(strings[0]);
                 Gson gson = new Gson();
@@ -109,7 +109,7 @@ public class LoadJSONTask extends AsyncTask<String, Void, Response> {
         Log.d(TAG, "LoadJSON()");
         //InputStream is = null;
         // esta es la url que se tiene en cuenta
-        URL url = new URL("http://192.168.1.46:8000/productos");
+        URL url = new URL("http://192.168.1.131:8000/productos");
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
 

@@ -20,7 +20,7 @@ public class MovementActivity  extends AppCompatActivity implements LoadMovement
 
     private ListView mListViewMov;
 
-    public static final String URL = "192.168.1.46:8000/movimientos";
+    public static final String URL = "192.168.1.131:8000/movimientos";
 
     //private List<HashMap<String, String>> mMovimientosMapList = new ArrayList<>();
     private List<Movimiento> mMovimientosList = new ArrayList<>();

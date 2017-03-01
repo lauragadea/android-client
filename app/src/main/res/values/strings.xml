@@ -6,6 +6,18 @@
     <string name="name">Laura Gadea</string>
     <string name="fingerprint_description">Confirme la huella para continuar</string>
     <string name="fingerprint_hint">Toque el sensor</string>
-
+    <string name="purchase_done">Compra exitosa</string>
+    <string name="sign_in">Realizar pago</string>
+    <string name="fingerprint_not_recognized">Huella digital no reconocida. Inténtelo de nuevo</string>
+    <string name="fingerprint_success">Huella digital reconocida</string>
+    <string name="cancel">Cancelar</string>
+    <string name="use_fingerprint_to_authenticate_key">use_fingerprint_to_authenticate_key</string>
+    <string name="use_fingerprint_to_authenticate_title">Use fingerprint to authenticate</string>
+    <string name="ok">Ok</string>
+    <string name="use_password">Usar contraseña</string>
+    <string name="password_description">Ingrese su contraseña para continuar</string>
+    <string name="new_fingerprint_enrolled_description">Se ha agregado una nueva huella, se requiere la contraseña para continuar</string>
+    <string name="password">Contraseña</string>
+    <string name="use_fingerprint_in_future">Utilizar huella digital más adelante</string>
 
 </resources>

@@ -49,6 +49,7 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/ing_dinero"
                 android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -56,10 +57,12 @@
                 android:text="Ingresar dinero en mi cuenta"/>
 
             <TextView
+                android:id="@+id/pesos"
                 android:textSize="22sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
                 android:text="Ingrese un monto de dinero"/>
 
 
@@ -68,35 +71,50 @@
                 android:textSize="40sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/pesos"
                 android:text="$ "
+                android:layout_marginBottom="20dp"
                 android:inputType="number"/>
 
-            <TextView
-                android:textSize="22sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Ingrese el numero de tarjeta"/>
-
-            <EditText
-                android:id="@+id/nro_tarjeta"
-                android:textSize="35sp"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                />
+                android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btnGo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:text="@string/continuar"
-                android:textColor="@color/white"
-                android:onClick="cargarDinero"
-                />
+                <ImageView
+                    android:id="@+id/visa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/visa"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="8dp"
+                    />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tarjeta"
+                    android:layout_toRightOf="@id/visa"
+                    android:textSize="22sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="**** 7203"/>
+            </RelativeLayout>
+
+
+
+                <Button
+                    android:id="@+id/btnGo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tarjeta"
+                    android:textSize="17dp"
+                    android:text="@string/continuar"
+                    android:textColor="@color/white"
+                    android:onClick="cargarDinero"
+                    />
+
+            </LinearLayout>
+
+
     </RelativeLayout>
 
 </LinearLayout>

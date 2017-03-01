@@ -42,11 +42,11 @@ public class LoadAccountJSONTask extends AsyncTask<String, Void, Saldo> {
         try {
             String stringResponse = loadAccountJSON(strings[0]);
 
-            StringTokenizer tokens = new StringTokenizer(stringResponse, ":");
+           /* StringTokenizer tokens = new StringTokenizer(stringResponse, ":");
             String first = tokens.nextToken();
             String second = tokens.nextToken();
             second.split("\\[");
-           // Log.d("tag", "second " + second );
+           */// Log.d("tag", "second " + second );
             Gson gson = new Gson();
             Log.d("TAG", stringResponse);
             Saldo sal = gson.fromJson(stringResponse, Saldo.class);
@@ -80,7 +80,7 @@ public class LoadAccountJSONTask extends AsyncTask<String, Void, Saldo> {
     private String loadAccountJSON(String myurl) throws IOException {
 
         // esta es la url que se tiene en cuenta
-        URL url = new URL("http://192.168.1.46:8000/saldo");
+        URL url = new URL("http://192.168.1.131:8000/saldo");
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try {
 
