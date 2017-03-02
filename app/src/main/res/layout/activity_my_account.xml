@@ -97,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="**** 7203"/>
-            </RelativeLayout>
+
 
 
 
@@ -108,10 +108,11 @@
                     android:layout_below="@id/tarjeta"
                     android:textSize="17dp"
                     android:text="@string/continuar"
+                    android:layout_marginTop="20dp"
                     android:textColor="@color/white"
                     android:onClick="cargarDinero"
                     />
-
+            </RelativeLayout>
             </LinearLayout>
 
 

@@ -80,7 +80,6 @@
                 android:text="@string/continuar"
                 android:textColor="@color/white"
 
-
                 />
         </LinearLayout>
 

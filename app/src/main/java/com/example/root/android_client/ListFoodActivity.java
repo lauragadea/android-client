@@ -84,11 +84,11 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
 
 
         new LoadJSONTask(this).execute(URL);
-        Log.d("tag", "DEBAJO LOADJSONTASK");
+
 
         //fingerprint
         try {
-            Log.d("tag", "dentro del try");
+
             mKeyStore = KeyStore.getInstance("AndroidKeyStore");
         } catch (KeyStoreException e) {
             throw new RuntimeException("Failed to get an instance of KeyStore", e);
@@ -139,12 +139,10 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
             public void onClick(View v) {
                 findViewById(R.id.confirmation_message).setVisibility(View.GONE);
                 findViewById(R.id.encrypted_message).setVisibility(View.GONE);
-                Log.d("log", "estamos en onclick");
 
                 // Set up the crypto object for later. The object will be authenticated by use
                 // of the fingerprint.
                 if (initCipher()) {
-                    Log.d("tag","initcipher");
                     // Show the fingerprint dialog. The user has the option to use the fingerprint
                     // with crypto, or you can fall back to using a server-side verified password.
                     FingerprintAuthenticationDialogFragment fragment
@@ -156,7 +154,7 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
                     if (useFingerprintPreference) {
                         fragment.setStage(
                                 FingerprintAuthenticationDialogFragment.Stage.FINGERPRINT);
-                        Log.d("tag","fingerprint preference");
+
                     }
                     fragment.show(getFragmentManager(), DIALOG_FRAGMENT_TAG);
                 } else {
@@ -177,7 +175,7 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
     }
 
     public void onLoaded(List<Producto> productoList){
-        Log.d("tag", "on loaded");
+
         for (Producto producto : productoList) {
             HashMap<String, String> map = new HashMap<>();
 
@@ -212,7 +210,7 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
     }
 
     private void loadListView() {
-        Log.d("tag", "on loadlistview");
+
         ListAdapter adapter = new SimpleAdapter(ListFoodActivity.this, mProductosMapList, R.layout.list_item,
                 new String[] { KEY_DESCRIPCION, KEY_PRECIO },
                 new int[] { R.id.descripcion,R.id.precio });
@@ -257,6 +255,8 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
 
     // Show confirmation, if fingerprint was used show crypto information.
     private void showConfirmation(byte[] encrypted) {
+
+
         findViewById(R.id.confirmation_message).setVisibility(View.VISIBLE);
         if (encrypted != null) {
             TextView v = (TextView) findViewById(R.id.encrypted_message);
@@ -271,6 +271,7 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
     private void tryEncrypt() {
         try {
             byte[] encrypted = mCipher.doFinal(SECRET_MESSAGE.getBytes());
+            //DESCONTAR DE LA BD
             showConfirmation(encrypted);
         } catch (BadPaddingException | IllegalBlockSizeException e) {
             Toast.makeText(this, "Failed to encrypt the data with the generated key. "

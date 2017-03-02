@@ -51,16 +51,7 @@ public class MovementActivity  extends AppCompatActivity implements LoadMovement
 
 
     public void onLoaded(List<Movimiento> movimientoList){
-        Log.d("tag", "on loaded");
-        /*for (Movimiento movimiento : movimientoList) {
-            HashMap<String, String> map = new HashMap<>();
 
-            map.put(KEY_DESCRIPCION, movimiento.getDescripcion());
-            map.put(KEY_MONTO, movimiento.getMonto());
-            //map.put(KEY_FECHA, movimiento.getFecha());
-
-            mMovimientosList.add(map);
-        }*/
         mMovimientosList.addAll(movimientoList);
         loadListView();
     }
@@ -73,17 +64,10 @@ public class MovementActivity  extends AppCompatActivity implements LoadMovement
 
 
     private void loadListView() {
-        Log.d("tag", "on loadlistview");
-        /*ListAdapter adapter = new SimpleAdapter(MovementActivity.this, mMovimientosList, R.layout.movement_list_item,
-                new String[] { KEY_DESCRIPCION, KEY_MONTO },
-                new int[] { R.id.descripcion,R.id.monto });
 
-        mListViewMov.setAdapter(adapter);
-        */
         MovementAdapter movAdap;
         ArrayList<Movimiento> myListItems  = new ArrayList<>();
 
-        //then populate myListItems
 
         movAdap= new MovementAdapter (MovementActivity.this, 0, mMovimientosList);
 

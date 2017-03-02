@@ -28,6 +28,7 @@
         android:id="@+id/fecha"
         android:textSize="15dp"
         android:layout_toRightOf="@id/monto"
+        android:layout_marginLeft="30dp"
         android:layout_alignParentRight="true"/>
 
 </RelativeLayout>

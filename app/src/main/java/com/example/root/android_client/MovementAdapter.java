@@ -2,6 +2,7 @@ package com.example.root.android_client;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +72,7 @@ public class MovementAdapter extends ArrayAdapter<Movimiento> {
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
             String fecha = format.format(lMovimiento.get(position).getFecha());
             holder.fecha.setText(fecha);
+
 
 
         } catch (Exception e) {

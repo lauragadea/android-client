@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent3);
                         break;
                     case 3:
-                        setContentView(R.layout.sign_out);
+                        setContentView(R.layout.activity_login);
                         break;
                 }
             }
