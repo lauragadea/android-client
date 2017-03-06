@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         Intent intent = new Intent(MainActivity.this, ListFoodActivity.class);
                         startActivity(intent);
-                        Log.d("tag", "main");
                         break;
                     case 1:
                         //ojo con esta linea ->

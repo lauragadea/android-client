@@ -272,11 +272,17 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
         try {
             byte[] encrypted = mCipher.doFinal(SECRET_MESSAGE.getBytes());
             //DESCONTAR DE LA BD
+            //SUPUESTO TOTAL A PAGAR
+            //Largo la nueva activity
+            int total = 50;
+            Intent intent4 = new Intent(ListFoodActivity.this, PaymentActivity.class);
+            startActivity(intent4);
+
             showConfirmation(encrypted);
         } catch (BadPaddingException | IllegalBlockSizeException e) {
-            Toast.makeText(this, "Failed to encrypt the data with the generated key. "
-                    + "Retry the purchase", Toast.LENGTH_LONG).show();
-            Log.e(TAG, "Failed to encrypt the data with the generated key." + e.getMessage());
+            Toast.makeText(this, "Falló al encriptar la huella digital con la clave generada. "
+                    + "Intente nuevamente realizar la compra", Toast.LENGTH_LONG).show();
+            Log.e(TAG, "Falló al encriptar la huella digital con la clave generada." + e.getMessage());
         }
     }
 
@@ -325,5 +331,7 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
 

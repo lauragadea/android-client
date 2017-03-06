@@ -47,7 +47,7 @@ public class LoadMovementJSONTask extends AsyncTask<String, Void, RespuestaMovim
             Movimiento [] movimientos= gson.fromJson(stringResponse, Movimiento[].class);
             List<Movimiento> movimientoList = Arrays.asList(movimientos);
             res.setMovimientos(movimientoList);
-            //return gson.fromJson(stringResponse, Response.class);
+
             return res;
         } catch (IOException e) {
             e.printStackTrace();
