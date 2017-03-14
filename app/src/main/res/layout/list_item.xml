@@ -11,12 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
+        android:buttonTint="@color/black"
         android:layout_centerVertical="true"/>
 
     <TextView
         android:id="@+id/descripcion"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textColor="@color/black"
         android:textSize="20dp"
         />
 
@@ -24,6 +26,7 @@
         android:id="@+id/precio"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:textColor="@color/black"
         android:layout_toLeftOf="@id/checkBox"
         android:textSize="20dp"
         android:layout_marginRight="30dp"/>

@@ -44,7 +44,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
-public class ListFoodActivity extends Activity implements LoadJSONTask.Listener, AdapterView.OnItemClickListener {
+public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,ProductoListAdapter.OnItemCheckedListener {
 
     //Fingerprint
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -80,7 +80,7 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
         setContentView(R.layout.activity_list_food);
 
         mListView = (ListView) findViewById(R.id.list_view);
-        mListView.setOnItemClickListener(this);
+        //mListView.setOnItemClickListener(this);
 
 
         new LoadJSONTask(this).execute(URL);
@@ -184,7 +184,7 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
 
             mProductosMapList.add(map);
         }
-        loadListView();
+        loadListView(productoList);
     }
 
     @Override
@@ -193,29 +193,14 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
         Toast.makeText(this, "Error !", Toast.LENGTH_SHORT).show();
     }
 
-    //not working
-    //cambios para new branch!
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+    private void loadListView(List<Producto> productoList) {
 
-        CheckedTextView ctv = (CheckedTextView)view;
-
-        if(ctv.isChecked()){
-            Toast.makeText(this, "now it is unchecked", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this, "now it is checked", Toast.LENGTH_SHORT).show();
-        }
-
-
-        Toast.makeText(this, mProductosMapList.get(i).get(KEY_DESCRIPCION),Toast.LENGTH_LONG).show();
-    }
-
-    private void loadListView() {
-
+        /*
         ListAdapter adapter = new SimpleAdapter(ListFoodActivity.this, mProductosMapList, R.layout.list_item,
-                new String[] { KEY_DESCRIPCION, KEY_PRECIO },
-                new int[] { R.id.descripcion,R.id.precio });
-
+                new String[] { KEY_DESCRIPCION, KEY_PRECIO },new int[] { R.id.descripcion,R.id.precio });
+                */
+        ProductoListAdapter adapter = new ProductoListAdapter(getApplicationContext(), (ArrayList<Producto>) productoList);
+        adapter.setOnItemCheckedListener(this);
         mListView.setAdapter(adapter);
 
     }
@@ -334,5 +319,16 @@ public class ListFoodActivity extends Activity implements LoadJSONTask.Listener,
     }
 
 
+    @Override
+    public void onItemChecked(Producto product) {
+        if(null != product) {
+            if(product.isChecked()){
+                Toast.makeText(this, product.getDescripcion() + " checked", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, product.getDescripcion() + "  unchecked", Toast.LENGTH_SHORT).show();
+            }
+            //Toast.makeText(this, product.getDescripcion(),Toast.LENGTH_LONG).show();
+        }
+    }
 }
 
