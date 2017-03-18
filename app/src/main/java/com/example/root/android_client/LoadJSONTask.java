@@ -52,8 +52,18 @@ public class LoadJSONTask extends AsyncTask<String, Void, Response> {
                 //Response res = gson.fromJson(stringResponse, Response.class);
                 Response res = new Response();
                 Producto [] productos = gson.fromJson(stringResponse, Producto[].class);
-                List<Producto> productList = Arrays.asList(productos);
+
+                int i;
+                List<Producto> productList = new ArrayList<Producto>();
+                for (i=0; i<productos.length; i++){
+                    productList.add(productos[i]);
+                }
                 res.setProductos(productList);
+                /*List<Producto> productList = Arrays.asList(productos);
+                res.setProductos(productList);
+                */
+
+
                 //return gson.fromJson(stringResponse, Response.class);
                 return res;
             } catch (IOException e) {

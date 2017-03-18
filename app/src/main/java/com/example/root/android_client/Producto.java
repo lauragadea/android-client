@@ -10,8 +10,20 @@ public class Producto {
     private String precio;
     private boolean checked;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public String getDescripcion(){
         return descripcion;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
     public String getPrecio(){
